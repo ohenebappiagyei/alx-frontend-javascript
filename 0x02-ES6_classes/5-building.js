@@ -1,4 +1,4 @@
-class Building {
+export default class Building {
   // eslint-disable-next-line no-underscore-dangle
   constructor(sqft) { this._sqft = sqft; }
 
@@ -12,5 +12,3 @@ class Building {
     throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
-
-export default Building;
