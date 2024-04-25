@@ -1,14 +1,21 @@
 export default class Building {
-  // eslint-disable-next-line no-underscore-dangle
-  constructor(sqft) { this._sqft = sqft; }
+  constructor(sqft) {
+    if (
+      this.constructor !== Building
+        && this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage
+    ) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
+    this.sqft = sqft;
+  }
 
-  // Getter for sqft
   // eslint-disable-next-line no-underscore-dangle
   get sqft() { return this._sqft; }
 
-  // Abstract method to be overridden by subclasses
-  // eslint-disable-next-line class-methods-use-this
+  // eslint-disable-next-line no-underscore-dangle
+  set sqft(sqft) { this._sqft = sqft; }
+
   evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    return this.sqrt;
   }
 }
