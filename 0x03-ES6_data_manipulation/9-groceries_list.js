@@ -1,4 +1,4 @@
-function groceriesList() {
+export default function groceriesList() {
   const groceries = [
     { name: "Apples", quantity: 10 },
     { name: "Tomatoes", quantity: 10 },
@@ -9,5 +9,3 @@ function groceriesList() {
 
   return new Map(groceries.map((item) => [item.name, item.quantity]));
 }
-
-export default groceriesList;
