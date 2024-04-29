@@ -1,8 +1,4 @@
-function cleanSet(set, startString) {
-  if (!Set.prototype.isPrototypeOf(set) || typeof startString !== "string") {
-    throw new TypeError('Arguments must be Set and String');
-  }
-
+export default function cleanSet(set, startString) {
   const filteredValues = [];
   for (const value of set) {
     if (value.startsWith(startString)) {
@@ -12,5 +8,3 @@ function cleanSet(set, startString) {
 
   return filteredValues.join("-");
 }
-
-export default cleanSet;
