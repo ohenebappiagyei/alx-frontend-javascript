@@ -1,6 +1,7 @@
 const weakMap = new WeakMap();
 
 function queryAPI(endpoint) {
+// eslint-disable-next-line no-use-before-define
   if (!endpoint || !isObject(endpoint) || !endpoint.protocol || !endpoint.name) {
     throw new TypeError('Invalid endpoint argument');
   }
