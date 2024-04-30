@@ -1,10 +1,7 @@
-export default function updateUniqueItems(map) {
-    if (!Map.prototype.isPrototypeOf(map)) {
-        throw new Error("Cannot process");
+export default function updateUniqueItems(groceriesMap) {
+    for (let [key, value] of groceriesMap.entries()) {
+        if (value === 1) {
+            groceriesMap.set(key, 100);
+        }
     }
-
-    return new Map([...map].map((entry) => {
-        const [key, quantity] = entry;
-        return [key, quantity === 1 ? 100 : quantity];
-    }));
 }
