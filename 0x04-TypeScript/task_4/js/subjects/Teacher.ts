@@ -1,13 +1,16 @@
-/// <reference path="Teacher.ts" />
-
 namespace Subjects {
-  export class Subject {
-    teacher: Teacher;
+    export class Teacher {
+        firstName: string;
+        lastName: string;
+        experienceTeachingC?: number;
+        experienceTeachingJava?: number;
+        experienceTeachingReact?: number;
 
-    setTeacher = (teacher: Teacher) => {
-      this.teacher = teacher;
+        constructor(firstName: string, lastName: string) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
     }
-  }
 }
 
 export { Subjects }; // Export the namespace
